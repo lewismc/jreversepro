@@ -30,6 +30,7 @@ public class ClassFileParserFactory {
   public static ClassFileParser getClassFileParser(DataInputStream dis)
       throws ClassParserException, IOException {
     assertJVMMagic(dis);
+    @SuppressWarnings("unused")
     JVMVersion jvmVersion = readVersion(dis);
     // TODO: Depending on the supported JVM Versions - select one
     // appropriately
@@ -86,6 +87,7 @@ public class ClassFileParserFactory {
    * 
    * @return true if the major/minor versions are acceptable
    */
+  @SuppressWarnings("unused")
   private static boolean supportedMajorMinor(JVMVersion _version) {
     if (_version.major == 45) {
       return (_version.minor >= 3);

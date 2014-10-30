@@ -80,6 +80,7 @@ public class DecompilerOutputImpl extends AbstractClassOutputterImpl {
 
   }
 
+  @SuppressWarnings("unused")
   private final Logger logger = CustomLoggerFactory.createLogger();
 
 }

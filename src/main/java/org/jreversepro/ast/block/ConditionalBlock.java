@@ -33,8 +33,10 @@ public class ConditionalBlock extends Block {
   }
 
   
+  @SuppressWarnings("unused")
   private final ConditionExpression expr;
 
+  @SuppressWarnings("unused")
   private final ConditionalType type;
 
 }

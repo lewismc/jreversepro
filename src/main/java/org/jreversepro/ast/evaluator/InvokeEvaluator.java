@@ -97,6 +97,7 @@ public class InvokeEvaluator extends AbstractInstructionEvaluator {
 
     int nameIndex = pool.getPtr2(offset);
     String methodName = pool.getFirstDirectName(nameIndex);
+    @SuppressWarnings("unused")
     String className = pool.getClassName(classIndex);
     String argsList = pool.getEntryValue(pool.getPtr2(nameIndex));
 

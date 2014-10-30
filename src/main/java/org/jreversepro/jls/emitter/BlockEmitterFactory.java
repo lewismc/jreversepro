@@ -60,6 +60,7 @@ public final class BlockEmitterFactory {
     return emitter;
   }
 
+  @SuppressWarnings("unused")
   private static Logger logger = CustomLoggerFactory.createLogger();
 
 }

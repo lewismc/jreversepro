@@ -13,7 +13,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
  * See the License for the specific language governing permissions and
  * limitations under the License. 
-
  */
 package org.jreversepro;
 
@@ -23,7 +22,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.logging.Logger;
-
 
 import org.apache.commons.io.IOUtils;
 import org.jreversepro.output.AbstractOutputter;
@@ -61,6 +59,7 @@ public class JReverseProContext {
       + "\n// it under certain conditions;See the File 'COPYING' for "
       + "more details.\n";
 
+  @SuppressWarnings("unused")
   private final Logger logger = CustomLoggerFactory.createLogger();  
 
   /**

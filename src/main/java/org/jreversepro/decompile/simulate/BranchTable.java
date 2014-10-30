@@ -28,8 +28,8 @@ import java.util.logging.Logger;
 
 import org.jreversepro.CustomLoggerFactory;
 import org.jreversepro.jvm.Opcodes;
-import org.jreversepro.reflect.Method;
 import org.jreversepro.reflect.ExceptionThrown;
+import org.jreversepro.reflect.Method;
 import org.jreversepro.reflect.instruction.Instruction;
 
 
@@ -224,6 +224,7 @@ public class BranchTable implements BranchConstants, Opcodes {
    */
   public void addSwitch(SwitchTable switchEntry) {
     int defaultByte = switchEntry.getDefaultByte();
+    @SuppressWarnings("unused")
     int maxTarget = defaultByte;
     List<CaseEntry> enumCases = switchEntry.getCases();
 
@@ -353,6 +354,7 @@ public class BranchTable implements BranchConstants, Opcodes {
    *          List of Instructions.
    * @return null.
    */
+  @SuppressWarnings("unused")
   private Instruction getNextGoto(List<Instruction> byteIns) {
     return null;
   }

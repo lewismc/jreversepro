@@ -31,9 +31,11 @@ import org.jreversepro.reflect.variabletable.VariableTable;
 
 public class Decompiler {
 
+  @SuppressWarnings("unused")
   private static final Logger logger = CustomLoggerFactory.createLogger();
 
 
+  @SuppressWarnings("unused")
   private VariableTable variableTable;
 
   private final DecompilationContext context;
@@ -55,6 +57,7 @@ public class Decompiler {
 
   private Block inferBlocks(LineOfCodeList lines) {
     BlockInferrer ctx = new BlockInferrer(context);
+    @SuppressWarnings("unused")
     int nextPc = 0;
 
     for (AbstractLineOfCode line : lines.getAsList()) {

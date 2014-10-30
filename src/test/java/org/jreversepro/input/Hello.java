@@ -8,7 +8,7 @@ public class Hello {
   static int variable;
   
   public static void main(String[] args1) throws FileNotFoundException {
-    @SuppressWarnings("unused")
+    @SuppressWarnings({ "unused", "resource" })
     FileInputStream fst = new FileInputStream("a.txt");
   }
 

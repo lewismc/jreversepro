@@ -20,15 +20,15 @@
  **/
 package org.jreversepro.gui;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 
 /**
  * Provides a Custom List Panel.
@@ -40,12 +40,12 @@ public class CustomListPanel extends JPanel {
   /**
    * Corresponds to the Label 'Constant PoolTable'
    **/
-  private JLabel mLblList;
+  private final JLabel mLblList;
 
   /**
    * Corresponds to the Label 'Goto Index'.
    **/
-  private JLabel mLblGoto;
+  private final JLabel mLblGoto;
 
   /**
    * Gets Index of the ConstantPool as input from the user.
@@ -65,7 +65,7 @@ public class CustomListPanel extends JPanel {
   /**
    * List of categories available for searching.
    **/
-  public JComboBox mChooseType;
+  public JComboBox<?> mChooseType;
 
   /**
    * Find button.
@@ -76,6 +76,7 @@ public class CustomListPanel extends JPanel {
    * @param aMaxEntries
    *          Maximum Entries of the ConstantPool Table.
    **/
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   public CustomListPanel(int aMaxEntries) {
     mLblList = new JLabel("Constant Pool Table:   " + "Total Entries "
         + String.valueOf(aMaxEntries), SwingConstants.CENTER);

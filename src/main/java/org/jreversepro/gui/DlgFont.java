@@ -44,7 +44,7 @@ public class DlgFont extends JDialog implements ItemListener, ActionListener {
   public static final int PREVIEW_SIZE = 20;
   public static final int OPTIMUM_SIZE = 14;
 
-  private final JComboBox faces;
+  private final JComboBox<?> faces;
 
   private final JButton btnOk;
   private final JButton btnCancel;
@@ -58,7 +58,7 @@ public class DlgFont extends JDialog implements ItemListener, ActionListener {
   public DlgFont(Frame owner, String title) {
     super(owner, title, true);
 
-    faces = new JComboBox(getFontObjects());
+    faces = new JComboBox<Object>(getFontObjects());
     faces.addItemListener(this);
 
     btnOk = new JButton("         Ok           ");

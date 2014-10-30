@@ -45,5 +45,6 @@ public class SwitchLine extends AbstractLineOfCode {
 
   }
 
-  private Expression exp;
+  @SuppressWarnings("unused")
+  private final Expression exp;
 }

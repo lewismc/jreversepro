@@ -39,6 +39,7 @@ import org.jreversepro.reflect.Method;
  */
 public final class AttributeParser {
 
+  @SuppressWarnings("unused")
   private static final Logger logger = CustomLoggerFactory.createLogger();
 
   /**
@@ -61,6 +62,7 @@ public final class AttributeParser {
   public static String readConstantValue(DataInputStream aDis,
       ConstantPool aCpInfo) throws IOException {
 
+    @SuppressWarnings("unused")
     int len = aDis.readInt();
     short index = aDis.readShort();
     return (aCpInfo.getBasicDataTypeValue(index));
@@ -80,6 +82,7 @@ public final class AttributeParser {
    *           Error in Class Stream of bytes.
    */
   public static void readDeprecated(DataInputStream aDis) throws IOException {
+    @SuppressWarnings("unused")
     int len = aDis.readInt();// len must be zero.
   }
 
@@ -97,6 +100,7 @@ public final class AttributeParser {
    *           Error in Class Stream of bytes.
    */
   public static void readSynthetic(DataInputStream aDis) throws IOException {
+    @SuppressWarnings("unused")
     int len = aDis.readInt();// len must be zero.
   }
 
@@ -137,6 +141,7 @@ public final class AttributeParser {
      * length of the attribute [here Code]. Here we just read it to move the
      * aDis pointer to read and pass the 4 bytes length.
      */
+    @SuppressWarnings("unused")
     int len = aDis.readInt();
 
     short maxStack = aDis.readShort();
@@ -311,6 +316,7 @@ public final class AttributeParser {
    */
   private static void readLocalVariableTable(DataInputStream aDis,
       ConstantPool constPool, Method method) throws IOException {
+    @SuppressWarnings("unused")
     int len = aDis.readInt();
 
     LocalVariableTable localVarTable = new LocalVariableTable(method.isStatic());

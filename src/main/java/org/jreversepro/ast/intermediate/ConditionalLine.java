@@ -45,6 +45,7 @@ public class ConditionalLine extends AbstractLineOfCode {
      */
   }
 
-  private ConditionExpression ex;
+  @SuppressWarnings("unused")
+  private final ConditionExpression ex;
 
 }
