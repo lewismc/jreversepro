@@ -37,20 +37,59 @@
     <url>http://github.com/akkumar/jreversepro</url>
   </organization>
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <filesets>
+              <fileset>
+                <directory>${basedir}/lib</directory>
+                <followSymlinks>false</followSymlinks>
+                <useDefaultExcludes>true</useDefaultExcludes>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </fileset>
+            </filesets>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
+        <version>3.2</version>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.9</version>
+        <inherited>true</inherited>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <properties>
-  	<mvn.plugin.version>2.0.9</mvn.plugin.version>
+    <mvn.plugin.version>2.0.9</mvn.plugin.version>
   </properties>
   <dependencies>
     <dependency>
@@ -63,14 +102,14 @@
       <artifactId>commons-io</artifactId>
       <version>1.4</version>
     </dependency>
-    
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.7</version>
       <scope>test</scope>
     </dependency>
-    
+
   </dependencies>
 
   <reporting>

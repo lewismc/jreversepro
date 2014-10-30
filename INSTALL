@@ -3,9 +3,6 @@ Java Decompiler / Disassembler
 http://jrevpro.sourceforge.net
 Dec 1 2009
 
-
-
-
 * Set the environment variable JREVERSE_HOME to point to this directory,
 to which you have extracted the tarball.
 
